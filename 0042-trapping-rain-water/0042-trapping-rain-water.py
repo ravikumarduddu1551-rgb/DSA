@@ -11,7 +11,7 @@ class Solution:
                     tot += lm - h[i]
                 lm = max(lm, h[i])
                 i += 1
-            elif lm > rm:
+            else:
                 if rm - h[j] > 0:
                     tot += rm - h[j]
                 rm = max(rm, h[j])
