@@ -8,12 +8,6 @@ class Solution:
             area = max(area, w*min(h[i],h[j]))
             if h[i] < h[j]:
                 i += 1
-            elif h[i] > h[j]:
+            elif h[i] >= h[j]:
                 j -=1
-            else:
-                i += 1
-                j -= 1
         return area
-
-                
-            
