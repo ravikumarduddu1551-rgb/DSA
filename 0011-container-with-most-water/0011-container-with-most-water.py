@@ -4,8 +4,9 @@ class Solution:
         i = 0
         area = 0
         while i < j:
-            w = abs(i - j)
-            area = max(area, w*min(h[i],h[j]))
+            w = j - i
+            t = w*min(h[i],h[j])
+            area = area if area > t else t
             if h[i] < h[j]:
                 i += 1
             elif h[i] >= h[j]:
