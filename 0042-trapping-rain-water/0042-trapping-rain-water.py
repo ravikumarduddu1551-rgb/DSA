@@ -1,17 +1,21 @@
 class Solution:
     def trap(self, h: List[int]) -> int:
         n = len(h)
-        pm = [0]*n
-        sm = [0]*n
-        pm[0] = h[0]
-        for i in range(1, n):
-            pm[i] = max(pm[i-1], h[i])
-        sm[n-1] = h[n-1]
-        for i in range(n-2, -1, -1):
-            sm[i] = max(sm[i+1], h[i])
+        i, j = 0, n-1
+        lm = h[i]
+        rm = h[n-1]
         tot = 0
-        for i in range(n):
-            wl = min(pm[i], sm[i])
-            if (wl - h[i]) > 0:
-                tot += wl - h[i]
+        while i <= j:
+            if lm <= rm:
+                if lm - h[i] > 0:
+                    tot += lm - h[i]
+                lm = max(lm, h[i])
+                i += 1
+            elif lm > rm:
+                if rm - h[j] > 0:
+                    tot += rm - h[j]
+                rm = max(rm, h[j])
+                j -= 1
         return tot
+
+
