@@ -1,7 +1,7 @@
 class Solution:
     def trap(self, h: List[int]) -> int:
         n = len(h)
-        i, j = 0, n-1
+        i, j = 1, n-2
         lm = h[0]
         rm = h[-1]
         tot = 0
@@ -17,5 +17,3 @@ class Solution:
                 rm = max(rm, h[j])
                 j -= 1
         return tot
-
-
