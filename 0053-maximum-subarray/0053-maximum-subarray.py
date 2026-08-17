@@ -11,6 +11,6 @@ class Solution:
         ms = 0
         cs = 0
         for i in range(len(nums)):
-            cs = max(nums[i], cs + nums[i])
-            ms = max(ms, cs)
+            cs = nums[i] if nums[i] > cs + nums[i] else cs + nums[i]
+            ms = ms if ms > cs else cs
         return ms
