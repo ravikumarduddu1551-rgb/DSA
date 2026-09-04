@@ -1,9 +1,6 @@
 class Solution:
     def smallestNumber(self, pattern: str) -> str:
-        ans = ""
-        for i in range(1, len(pattern)+2):
-            ans += str(i)
-        ans = list(ans)
+        ans = [str(i) for i in range(1,len(pattern)+2)]
         i = 0
         while i < len(pattern):
             if pattern[i] == 'D':
@@ -14,5 +11,4 @@ class Solution:
                 i = j
             else:
                 i += 1
-            
         return "".join(ans)
