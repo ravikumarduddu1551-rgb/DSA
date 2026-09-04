@@ -6,8 +6,7 @@ class Solution:
             mi[i] = min(nums[i], mi[i+1])
         ma = 0
         for i in range(n):
-            if nums[i] > ma:
-                ma = nums[i]
+            ma = max(ma, nums[i])
             if ma - mi[i] <= k:
                 return i
         return -1
