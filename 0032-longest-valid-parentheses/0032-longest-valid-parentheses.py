@@ -2,8 +2,8 @@ class Solution:
     def longestValidParentheses(self, s: str) -> int:
         stack = [-1]
         res = 0
-        for i, ch in enumerate(s):
-            if ch == '(':
+        for i in range(len(s)):
+            if s[i] == '(':
                 stack.append(i)
             else:
                 stack.pop()
