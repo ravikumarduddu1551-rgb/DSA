@@ -5,15 +5,9 @@ class Solution:
         for i in range(n):
             nums[i] = nums[i]**2
         nums.sort()
-        i = 0
-        k = 0
-        j = n - 1
-        while i < n and k <= j:
-            if i % 2 == 0:
-                res += nums[j]
-                j -= 1
-            else:
-                res -= nums[k]
-                k += 1
-            i += 1
+        for i in range(n//2):
+            res += nums[n-1-i]
+            res -= nums[i]
+        if n % 2 == 1:
+            res += nums[n//2]
         return res
